@@ -47,7 +47,7 @@ scan.addEventListener('click', async () => {
     const data = injected[0]?.result;
     if (!data || data.error) throw new Error(data?.error || 'No se obtuvo respuesta de Instagram.');
     unmatched = compare(data.followers, data.following);
-    document.querySelector('#summary').textContent = `@${data.username}: ${data.followers.length} seguidores, ${data.following.length} seguidos. ${unmatched.length} cuentas no te siguen de vuelta.`;
+    document.querySelector('#summary').textContent = `${data.username ? '@' + data.username : 'Tu cuenta'}: ${data.followers.length} seguidores, ${data.following.length} seguidos. ${unmatched.length} cuentas no te siguen de vuelta.`;
     status.textContent = 'Comparación finalizada. Las listas pueden cambiar durante la consulta.';
     render();
   } catch (error) {
