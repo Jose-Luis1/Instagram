@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Seguimiento de vuelta",
+  "version": "0.1.0",
+  "description": "Compara tus seguidores y seguidos en tu sesión de Instagram.",
+  "permissions": ["scripting"],
+  "host_permissions": ["https://www.instagram.com/*"],
+  "action": {"default_title": "Ver quién no te sigue"},
+  "background": {"service_worker": "background.js"}
+}
