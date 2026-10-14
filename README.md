@@ -25,3 +25,11 @@ La integración real requiere comprobarla en un navegador con tu sesión de Inst
 ## Actualizar la extensión
 
 Descarga de nuevo el ZIP desde GitHub y extráelo. En la página de extensiones pulsa el botón de recarga si reemplazaste los archivos en la misma carpeta, o carga la nueva carpeta. Cierra los informes anteriores y vuelve a pulsar el icono. La versión 0.1.1 usa el ID de la cuenta de la sesión local cuando está disponible y distingue errores en las consultas de cuenta, seguidores y seguidos. Esto no garantiza que Instagram permita el acceso a sus endpoints.
+
+## Panel 0.2.0
+
+Incluye un logo propio, resumen de seguidores, seguidos, cuentas que no te siguen y seguimiento mutuo. Las tarjetas muestran el nombre y la foto recibidos de Instagram; si no hay foto o falla su carga, aparecen las iniciales. Las imágenes se cargan directamente desde hosts de Instagram/Meta, sin nuevos permisos de acceso a sitios.
+
+Puedes buscar por usuario o nombre, ordenar alfabéticamente y cargar más tarjetas. **Exportar CSV** descarga las cuentas que coinciden con el filtro actual, no solo las tarjetas visibles. La exportación es voluntaria y permanece en tu equipo. Los nombres se escapan para evitar fórmulas de hoja de cálculo.
+
+La extensión no guarda historial de consultas. Los contadores se calculan sobre las listas recuperadas; no se hacen consultas adicionales de perfil para conseguir fotos.

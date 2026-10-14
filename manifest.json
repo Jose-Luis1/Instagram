@@ -1,10 +1,33 @@
 {
   "manifest_version": 3,
   "name": "Seguimiento de vuelta",
-  "version": "0.1.1",
-  "description": "Compara tus seguidores y seguidos en tu sesión de Instagram.",
-  "permissions": ["scripting"],
-  "host_permissions": ["https://www.instagram.com/*"],
-  "action": {"default_title": "Ver quién no te sigue"},
-  "background": {"service_worker": "background.js"}
+  "version": "0.2.0",
+  "description": "Compara tus seguidores y seguidos en tu sesi\u00f3n de Instagram.",
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.instagram.com/*"
+  ],
+  "action": {
+    "default_title": "Ver qui\u00e9n no te sigue",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' https://cdninstagram.com https://*.cdninstagram.com https://fbcdn.net https://*.fbcdn.net https://*.instagram.com https://instagram.com;"
+  }
 }

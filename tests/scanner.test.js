@@ -58,3 +58,9 @@ test('HTML instead of JSON identifies the failed stage without leaking cookies',
   assert.doesNotMatch(result.error, /local-test|ds_user_id|csrftoken/);
   assert.equal(result.followers, undefined);
 });
+test('preserves names and avatars supplied by Instagram without adding requests', async () => {
+  const {result, paths} = await run([{users:[]},{users:[{pk:1,username:'ana',full_name:'Ana',profile_pic_url:'https://scontent.cdninstagram.com/a.jpg'}]}], 'ds_user_id=10');
+  assert.equal(result.following[0].full_name,'Ana');
+  assert.equal(result.following[0].profile_pic_url,'https://scontent.cdninstagram.com/a.jpg');
+  assert.equal(paths.length,2);
+});

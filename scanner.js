@@ -34,7 +34,7 @@
         if (cursor) params.set('max_id', cursor);
         const data = await request(`/api/v1/friendships/${encodeURIComponent(user.pk)}/${kind}/?${params}`, kind === 'followers' ? 'seguidores' : 'seguidos');
         if (!Array.isArray(data.users) || data.users.some(item => !item.pk || !item.username)) throw new Error('Instagram cambió el formato de las listas. No se puede realizar una comparación confiable.');
-        for (const item of data.users) users.set(String(item.pk), { pk: String(item.pk), username: item.username });
+        for (const item of data.users) users.set(String(item.pk), { pk: String(item.pk), username: item.username, full_name: typeof item.full_name === "string" ? item.full_name : "", profile_pic_url: typeof item.profile_pic_url === "string" ? item.profile_pic_url : null });
         if (data.has_more === true && !data.next_max_id) throw new Error('Instagram entregó una lista incompleta. Vuelve a intentarlo más tarde.');
         if (!data.next_max_id) return [...users.values()];
         cursor = String(data.next_max_id);
